@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guitar Chord Library",
+  title: "Guitar Chord Library For Myanamr Songs",
   description:
     "A comprehensive library of guitar chords with finger positions, diagrams & knowledge sharing.",
 };
