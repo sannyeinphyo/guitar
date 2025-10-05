@@ -15,10 +15,30 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Guitar Chord Library For Myanamr Songs",
-  description:
-    "A comprehensive library of guitar chords with finger positions, diagrams & knowledge sharing.",
+  title: "Guitar Chord Library for Myanmar Songs",
+  description: "A comprehensive library of guitar chords with diagrams, finger positions & more.",
+  keywords: ["guitar chords", "myanmar songs", "chord library", "music", "tutorials" , "mm songs chords", "guitar knowledge" , "burmese songs chords"],
+  openGraph: {
+    title: "Guitar Chord Library for Myanmar Songs 🎸",
+    description: "Browse and learn guitar chords for your favorite Myanmar songs.",
+    url: "https://guitar-azure.vercel.app/",
+    siteName: "GuitarChordLibrary",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Guitar Chord Library",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
 };
+
 
 export default function RootLayout({
   children,
