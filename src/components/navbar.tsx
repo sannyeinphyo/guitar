@@ -22,7 +22,7 @@ export default function NavBar() {
     {
       id: 4,
       name: "Contacts",
-      link: "/home/constacts",
+      link: "/home/contacts",
     },
     {
       id: 5,
