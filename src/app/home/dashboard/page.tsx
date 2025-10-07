@@ -3,6 +3,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Guitar, Music2, Zap } from "lucide-react";
+import Link from "next/link";
 
 export default function Dashboard() {
   const acousticGuitars = [
@@ -36,6 +37,62 @@ export default function Dashboard() {
     electric:
       "The first electric guitar was invented in 1931 by George Beauchamp.",
   };
+
+  const benefitsG = [
+    {
+      title: "Heartfelt Connection",
+      description:
+        "Each chord you play becomes a whisper from the soul, expressing emotions words cannot capture.",
+    },
+    {
+      title: "Endless Expression",
+      description:
+        "Chords open doors to countless songs, letting you serenade love, longing, and joy through melody.",
+    },
+    {
+      title: "Creative Passion",
+      description:
+        "Understanding harmonies invites you to compose your own stories — each strum a heartbeat of imagination.",
+    },
+    {
+      title: "Emotional Escape",
+      description:
+        "The guitar becomes your confidant, turning quiet moments into poetry and sound.",
+    },
+    {
+      title: "Shared Moments",
+      description:
+        "Playing chords lets you connect with others — hearts swaying together in rhythm and harmony.",
+    },
+  ];
+
+  const RBenefits = [
+    {
+      title: "Emotional Connection",
+      description:
+        "Each chord becomes a heartbeat, letting your soul speak through gentle strings.",
+    },
+    {
+      title: "Endless Expression",
+      description:
+        "From soft whispers to fiery passion, chords give your feelings a voice in every song.",
+    },
+    {
+      title: "Creative Freedom",
+      description:
+        "With every progression, you paint emotions, crafting melodies that linger like memories.",
+    },
+    {
+      title: "Pure Joy",
+      description:
+        "The touch of strings brings comfort and happiness, turning moments into music.",
+    },
+    {
+      title: "Sharing the Magic",
+      description:
+        "Whether alone or with others, chords unite hearts through the language of sound.",
+    },
+  ];
 
   const chipColors = [
     "bg-blue-100 text-blue-800",
@@ -209,59 +266,42 @@ export default function Dashboard() {
         </div>
         <div className="flex justify-around items-center flex-wrap text-justify">
           <div className="w-1/2 pr-4">
-            <h2 className="text-xl font-semibold mb-2.5">
+            <h2 className="text-xl font-semibold mb-2.5 hover:text-blue-600">
               The Romantic Benefits of Learning Guitar Chords
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>
-                <b>Heartfelt Connection:</b> Each chord you play becomes a
-                whisper from the soul, expressing emotions words cannot capture.
-              </li>
-              <li>
-                <b>Endless Expression:</b> Chords open doors to countless songs,
-                letting you serenade love, longing, and joy through melody.
-              </li>
-              <li>
-                <b>Creative Passion:</b> Understanding harmonies invites you to
-                compose your own stories — each strum a heartbeat of
-                imagination.
-              </li>
-              <li>
-                <b>Emotional Escape:</b> The guitar becomes your confidant,
-                turning quiet moments into poetry and sound.
-              </li>
-              <li>
-                <b>Shared Moments:</b> Playing chords lets you connect with
-                others — hearts swaying together in rhythm and harmony.
-              </li>
+              {benefitsG.map((benefit, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: false, amount: 0.1 }}
+                    className="hover:bg-cyan-600/40 p-2 rounded-md transition-colors duration-200"
+                >
+                  <b>{benefit.title}:</b> {benefit.description}
+                </motion.li>
+              ))}
             </ul>
           </div>
 
           <div className="w-1/2 pl-4">
-            <h2 className="text-xl font-semibold mb-2.5">
+            <h2 className="text-xl font-semibold mb-2.5 hover:text-blue-600">
               Benefits of Learning Guitar Chords
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
-              <li>
-                <b>Emotional Connection:</b> Each chord becomes a heartbeat,
-                letting your soul speak through gentle strings.
-              </li>
-              <li>
-                <b>Endless Expression:</b> From soft whispers to fiery passion,
-                chords give your feelings a voice in every song.
-              </li>
-              <li>
-                <b>Creative Freedom:</b> With every progression, you paint
-                emotions, crafting melodies that linger like memories.
-              </li>
-              <li>
-                <b>Pure Joy:</b> The touch of strings brings comfort and
-                happiness, turning moments into music.
-              </li>
-              <li>
-                <b>Sharing the Magic:</b> Whether alone or with others, chords
-                unite hearts through the language of sound.
-              </li>
+              {RBenefits.map((benefits, index) => (
+                <motion.li
+                  key={index}
+                  initial={{ opacity: 0, x: -20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                  viewport={{ once: false, amount: 0.1 }}
+                  className="hover:bg-cyan-600/40 p-2 rounded-md transition-colors duration-200"
+                >
+                  <b>{benefits.title}:</b> {benefits.description}
+                </motion.li>
+              ))}
             </ul>
           </div>
         </div>
@@ -276,14 +316,12 @@ export default function Dashboard() {
         </div>
 
         <div className="w-full flex justify-center items-center mb-4 ">
-          <motion.a
+          <Link
             href="/home/chords"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
             className="inline-block bg-gradient-to-r from-purple-500 to-indigo-500 text-white font-semibold mb-4 py-3 px-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300"
           >
             Explore Chords Now!
-          </motion.a>
+          </Link>
         </div>
       </main>
       <footer>
