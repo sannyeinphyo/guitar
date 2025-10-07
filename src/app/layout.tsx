@@ -16,11 +16,22 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: "Guitar Chords Library for Myanmar Songs",
-  description: "A comprehensive library of guitar chords with diagrams, finger positions & more.",
-  keywords: ["guitar chords", "myanmar songs", "chord library", "music", "tutorials" , "mm songs chords", "guitar knowledge" , "burmese songs chords"],
+  description:
+    "A comprehensive library of guitar chords with diagrams, finger positions & more.",
+  keywords: [
+    "guitar chords",
+    "myanmar songs",
+    "chord library",
+    "music",
+    "tutorials",
+    "mm songs chords",
+    "guitar knowledge",
+    "burmese songs chords",
+  ],
   openGraph: {
-    title: "Guitar Chords Library for Myanmar Songs 🎸",
-    description: "Browse and learn guitar chords for your favorite Myanmar songs.",
+    title: "Guitar Chords Library for Myanmar Songs",
+    description:
+      "Browse and learn guitar chords for your favorite Myanmar songs.",
     url: "https://guitar-azure.vercel.app/",
     siteName: "GuitarChordsLibrary",
     images: [
@@ -37,8 +48,10 @@ export const metadata: Metadata = {
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "IC3QTFUApw4LKEAeGD4Ysfl1bDfJr9qpDaslRz1XkN4",
+  },
 };
-
 
 export default function RootLayout({
   children,
