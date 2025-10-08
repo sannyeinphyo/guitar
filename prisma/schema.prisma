@@ -1,5 +1,5 @@
 datasource db {
-  provider = "mysql"
+  provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
@@ -13,65 +13,68 @@ enum Role {
 }
 
 model User {
-  id          Int          @id @default(autoincrement())
-  username    String       @unique
-  email       String       @unique
-  password    String
-  role        Role         @default(USER)
-  createdAt   DateTime     @default(now())
+  id        Int      @id @default(autoincrement())
+  username  String   @unique
+  name      String
+  email     String   @unique
+  password  String
+  role      Role     @default(USER)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
 
   savedChords SavedChord[]
   savedSongs  SavedSong[]
 }
 
 model Artist {
-  id      Int      @id @default(autoincrement())
-  name    String
-  image   String   @db.LongText
-  chords  Chord[]
-  songs   Song[]
+  id        Int      @id @default(autoincrement())
+  name      String
+  image     String   @db.VarChar(255)
+  createdAt DateTime @default(now())
+  chords    Chord[]
+  songs     Song[]
 
   @@map("artist")
 }
 
 model Chord {
-  id        Int         @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   name      String
   artistId  Int
-  artist    Artist      @relation(fields: [artistId], references: [id])
-  image     String      @db.LongText
-  createdAt DateTime    @default(now())
+  artist    Artist   @relation(fields: [artistId], references: [id])
+  image     String?  @db.VarChar(255)
+  createdAt DateTime @default(now())
 
-  savedBy   SavedChord[]
+  savedBy SavedChord[]
 }
 
 model Song {
-  id        Int         @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
   title     String
   artistId  Int
-  artist    Artist      @relation(fields: [artistId], references: [id])
-  chords    String?  
-  createdAt DateTime    @default(now())
+  artist    Artist   @relation(fields: [artistId], references: [id])
+  chords    String?
+  createdAt DateTime @default(now())
 
-  savedBy   SavedSong[]
+  savedBy SavedSong[]
 }
 
 model SavedChord {
-  id       Int    @id @default(autoincrement())
-  userId   Int
-  chordId  Int
-  user     User   @relation(fields: [userId], references: [id])
-  chord    Chord  @relation(fields: [chordId], references: [id])
+  id      Int   @id @default(autoincrement())
+  userId  Int
+  chordId Int
+  user    User  @relation(fields: [userId], references: [id])
+  chord   Chord @relation(fields: [chordId], references: [id])
 
   @@unique([userId, chordId])
 }
 
 model SavedSong {
-  id       Int    @id @default(autoincrement())
-  userId   Int
-  songId   Int
-  user     User   @relation(fields: [userId], references: [id])
-  song     Song   @relation(fields: [songId], references: [id])
+  id     Int  @id @default(autoincrement())
+  userId Int
+  songId Int
+  user   User @relation(fields: [userId], references: [id])
+  song   Song @relation(fields: [songId], references: [id])
 
   @@unique([userId, songId])
 }
