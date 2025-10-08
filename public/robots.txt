@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://guitar-azure.vercel.app
+
+# Sitemaps
+Sitemap: https://guitar-azure.vercel.app/sitemap.xml
