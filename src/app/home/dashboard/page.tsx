@@ -122,12 +122,12 @@ export default function Dashboard() {
   );
 
   return (
-    <div className="w-full py-4 bg-gradient-to-b from-teal-100 via-purple-100 to-white">
+    <div className="w-full bg-gradient-to-b from-teal-100 via-purple-100 to-white">
       <motion.h1
         initial={{ opacity: 0, y: -100 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.15 }}
-        className="text-4xl font-bold text-center"
+        className="text-4xl font-bold text-center pt-16"
       >
         Welcome From Chord Library
       </motion.h1>
@@ -136,19 +136,13 @@ export default function Dashboard() {
         Your one-stop destination for all your chord needs.
       </p>
 
-      <div className="mt-4 flex justify-center">
-        <h2 className="text-lg font-semibold">
-          Let's find out what kinds of guitars there are...
-        </h2>
-      </div>
-
       <main className="max-w-6xl mx-auto mt-8 space-y-12">
         {/* Classical Guitars */}
         <div className="flex justify-around items-center text-justify flex-wrap">
           <div className="w-1/2 pr-4">
             <div className="flex items-center gap-2 mb-2.5">
               <Music2 className="text-cyan-500" />
-              <h2 className="text-xl font-semibold">Classical Guitars</h2>
+              <h2 className="text-xl font-semibold hover:text-blue-700 hover:scale-105 transition-all">Classical Guitars</h2>
             </div>
             <p>
               <b>Classical guitar</b> is a member of the guitar family used in
@@ -267,7 +261,7 @@ export default function Dashboard() {
         <div className="flex justify-around items-center flex-wrap text-justify">
           <div className="w-1/2 pr-4">
             <h2 className="text-xl font-semibold mb-2.5 hover:text-blue-600">
-              The Romantic Benefits of Learning Guitar Chords
+              Benefits of Learning Guitar Chords
             </h2>
             <ul className="list-disc list-inside space-y-2 text-gray-700">
               {benefitsG.map((benefit, index) => (

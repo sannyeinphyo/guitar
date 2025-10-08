@@ -33,9 +33,7 @@ export default function NavBar() {
 
   return (
     <>
-
       <div className="w-full h-16 bg-gray-800 flex justify-between items-center px-8 text-white sticky top-0 z-50">
-
         <ul className="flex flex-row space-x-8">
           {nav_lists.map((list) => {
             const isActive = pathname.startsWith(list.link);
@@ -43,14 +41,13 @@ export default function NavBar() {
               <li key={list.id}>
                 <Link
                   href={list.link}
-                  className={`
-                    p-2 rounded-md text-sm font-medium transition-colors duration-200
-                    ${
-                      isActive
-                        ? "bg-gray-700 text-white"
-                        : " hover:bg-gray-700"
-                    }
-                  `}
+                  className={`p-2 rounded-md text-sm font-medium transition-colors duration-200
+              ${
+                isActive
+                  ? "bg-gray-700 text-white"
+                  : "hover:bg-gray-700 focus:outline-none focus:ring-1 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800"
+              }
+  `}
                 >
                   {list.name}
                 </Link>
@@ -61,11 +58,12 @@ export default function NavBar() {
 
         <ul className="flex flex-row items-center space-x-4 text-sm font-medium">
           <li>
-            <Input placeholder="Search ..." className="bg-gray-700 text-white border-none"/>
+            <Input
+              placeholder="Search ..."
+              className="bg-gray-700 text-white border-none"
+            />
           </li>
-          <li>
-            Profile
-          </li>
+          <li>Profile</li>
         </ul>
       </div>
     </>
