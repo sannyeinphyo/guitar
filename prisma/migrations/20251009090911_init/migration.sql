@@ -5,6 +5,7 @@ CREATE TYPE "Role" AS ENUM ('USER', 'ADMIN');
 CREATE TABLE "User" (
     "id" SERIAL NOT NULL,
     "username" TEXT NOT NULL,
+    "name" TEXT NOT NULL,
     "email" TEXT NOT NULL,
     "password" TEXT NOT NULL,
     "role" "Role" NOT NULL DEFAULT 'USER',
@@ -18,7 +19,7 @@ CREATE TABLE "User" (
 CREATE TABLE "artist" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
-    "image" BYTEA NOT NULL,
+    "image" VARCHAR(255) NOT NULL,
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "artist_pkey" PRIMARY KEY ("id")
@@ -29,7 +30,7 @@ CREATE TABLE "Chord" (
     "id" SERIAL NOT NULL,
     "name" TEXT NOT NULL,
     "artistId" INTEGER NOT NULL,
-    "image" BYTEA NOT NULL,
+    "image" VARCHAR(255),
     "createdAt" TIMESTAMP(3) NOT NULL DEFAULT CURRENT_TIMESTAMP,
 
     CONSTRAINT "Chord_pkey" PRIMARY KEY ("id")

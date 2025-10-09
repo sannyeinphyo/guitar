@@ -191,7 +191,7 @@ export default function Dashboard() {
           <div className="w-1/2 pl-4">
             <div className="flex items-center gap-2 mb-2.5">
               <Guitar className="text-orange-500" />
-              <h2 className="text-xl font-semibold">Acoustic Guitars</h2>
+              <h2 className="text-xl font-semibold hover:text-blue-700 hover:scale-105 transition-all">Acoustic Guitars</h2>
             </div>
             <p>
               <b>Acoustic guitars </b> come in various types, and their
@@ -213,7 +213,7 @@ export default function Dashboard() {
           <div className="w-1/2 pr-4">
             <div className="flex items-center gap-2 mb-2.5">
               <Zap className="text-red-500" />
-              <h2 className="text-xl font-semibold">Electric Guitars</h2>
+              <h2 className="text-xl font-semibold hover:text-blue-700 hover:scale-105 transition-all">Electric Guitars</h2>
             </div>
             <p>
               <b>An electric guitar</b> uses pickups to convert string
