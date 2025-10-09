@@ -1,6 +1,11 @@
 # *
 User-agent: *
 Allow: /
+Disallow: /admin
+Disallow: /home/about
+Disallow: /home/contacts
+Disallow: /home/chords
+Disallow: /home/songs
 
 # Host
 Host: https://guitar-azure.vercel.app
